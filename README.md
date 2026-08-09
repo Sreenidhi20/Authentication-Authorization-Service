@@ -1,9 +1,15 @@
 # Authentication-Authorization-Service
 I will design an auth service and reuse it as the identity layer across my other backend projects.
 
-Stack: FastAPI + PostgreSQL + SQLAlchemy + JWT (python-jose) + passlib + Authlib (Google OAuth) + slowapi (rate limiting) Frontend: React + Tailwind Deploy: Vercel (FE) + Render (BE) — same pattern as the URL Shortener project
+**Stack:** FastAPI + PostgreSQL + SQLAlchemy + JWT (python-jose) + passlib + Authlib (Google OAuth) + slowapi (rate limiting)
+**Frontend:** React + Tailwind
+**Deploy:** Vercel (FE) + Render (BE) — same pattern as the URL Shortener project
 
-Folder structure — Backend
+---
+
+## Folder structure — Backend
+
+```
 auth-service/
 ├── app/
 │   ├── main.py                 # FastAPI app entrypoint, lifespan, router includes
@@ -42,8 +48,11 @@ auth-service/
 ├── Dockerfile
 ├── docker-compose.yml
 └── README.md
+```
 
-Folder structure — Frontend
+## Folder structure — Frontend
+
+```
 auth-frontend/
 ├── src/
 │   ├── pages/
@@ -66,5 +75,6 @@ auth-frontend/
 │   └── main.jsx
 ├── .env.example
 └── package.json
+```
 
 
