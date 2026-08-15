@@ -1,0 +1,36 @@
+name: Backend CI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "auth-service/**"
+  pull_request:
+    branches: [main]
+    paths:
+      - "auth-service/**"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: auth-service
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run tests
+        env:
+          # CI runs against SQLite, not real SQL Server — see notes below
+          DATABASE_URL: sqlite:///./test.db
+          JWT_SECRET: ci-test-secret-key
+        run: pytest tests/ -v
