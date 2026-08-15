@@ -12,7 +12,7 @@ router = APIRouter(
 def sql_health_check(db: Session = Depends(get_db)):
     try:
         # Executes raw SQL safely through the SQLAlchemy connection pool
-        result = db.execute(text("SELECT status, message FROM HealthCheck;")).fetchone()
+        result = db.execute(text("SELECT status, message FROM Health_Check;")).fetchone()
         
         if not result:
             return {
