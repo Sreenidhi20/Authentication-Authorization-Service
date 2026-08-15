@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.routes import sql_health
+from app.routes import auth
 
 app = FastAPI(
     title="Authentication-Authorization-Service",
@@ -22,3 +23,4 @@ def root() -> dict[str, str]:
     return {"message": "Welcome to the Authenticatopn Project!"}
 
 app.include_router(sql_health.router)
+app.include_router(auth.router)

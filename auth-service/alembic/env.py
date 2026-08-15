@@ -10,7 +10,7 @@ sys.path.append(os.getcwd())
 
 from app.config import DATABASE_URL
 from app.database import Base
-#from app.models.user import User  # noqa: F401
+from app.models.user import User  # noqa: F401
 
 # Alembic Config object
 config = context.config
