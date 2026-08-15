@@ -20,7 +20,8 @@ function App() {
 
   return (
     <>
-      <h2>React Main App</h2>
+      <h1>React Main App</h1>
+      <h2>FE is still in prgress, currently working in BE</h2>
       <p>This value is coming from SQL to say BE is working</p>
       <p>
         <strong>Status:</strong> {health.status}
