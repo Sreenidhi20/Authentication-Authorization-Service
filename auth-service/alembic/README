@@ -1,0 +1,10 @@
+Generic single-database configuration.
+
+alembic revision --autogenerate -m "add users table"
+alembic upgrade head  
+
+
+one clarification on which URL goes where
+Local .env → local Postgres (your day-to-day dev DB)
+Render's Environment tab (for the deployed app) → Internal Database URL (faster, and free — external incurs a bit more latency and is meant for outside connections like this one you just used)
+Your own terminal, temporarily → External URL, only when you need to run a migration against production by hand, like you just did
