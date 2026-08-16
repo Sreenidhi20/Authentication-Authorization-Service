@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.routes import sql_health
-from app.routes import auth
+from app.routes import auth, user
 
 app = FastAPI(
     title="Authentication-Authorization-Service",
@@ -24,3 +24,4 @@ def root() -> dict[str, str]:
 
 app.include_router(sql_health.router)
 app.include_router(auth.router)
+app.include_router(user.router)
